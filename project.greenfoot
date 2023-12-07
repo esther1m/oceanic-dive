@@ -8,6 +8,7 @@ dependency1.type=UsesDependency
 dependency2.from=shipwreckWood
 dependency2.to=MyWorld
 dependency2.type=UsesDependency
+class.shipwreckWood.image=wood.png
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
