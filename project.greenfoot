@@ -57,8 +57,6 @@ target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
-<<<<<<< Updated upstream
-=======
 target2.height=70
 target2.name=shipwreckWood
 target2.showInterface=false
