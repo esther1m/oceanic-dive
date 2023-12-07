@@ -14,6 +14,7 @@ public class shipwreckWood extends Actor
      */
     public void act()
     {
+        move(3);
         // Add your action code here.
     }
 }
