@@ -37,4 +37,5 @@ public class shipwreckWood extends Actor
             setLocation(randX2, 4);
         }
     }
+}
 
