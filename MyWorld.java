@@ -19,8 +19,18 @@ public class MyWorld extends World
     public MyWorld()
     {    
         
+    
         // Create a new world with 1000x600 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
+        populate();
+    }
+        
+  private void populate(){
+        
+        for (int i = 0; i < NUMBER_OF_SHIPWRECK; i++){
+            int x = Greenfoot.getRandomNumber(getWidth());
+            addObject(new shipwreckWood(), x, 4);
+        }
         populate();
     }
         
