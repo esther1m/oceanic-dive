@@ -19,6 +19,7 @@ public class MyWorld extends World
     {    
         
     
+    
         // Create a new world with 1000x600 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
         populate();
