@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private static final int NUMBER_OF_SHIPWRECK = 6;
+    private static final int NUMBER_OF_SHIPWRECK = 7;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,11 +22,12 @@ public class MyWorld extends World
         populate();
     }
         
-  private void populate(){
-        
+    public void populate(){
+
         for (int i = 0; i < NUMBER_OF_SHIPWRECK; i++){
             int x = Greenfoot.getRandomNumber(getWidth());
             addObject(new shipwreckWood(), x, 4);
         }
+
     }
 }
