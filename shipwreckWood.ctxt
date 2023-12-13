@@ -9,6 +9,7 @@ comment2.target=void\ checkEdge()
 comment3.params=
 comment3.target=void\ checkCollision()
 numComments=4
+<<<<<<< HEAD
 #BlueJ class context
 comment0.target=shipwreckWood
 comment0.text=\n\ Write\ a\ description\ of\ class\ shipwreckWood\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
@@ -20,3 +21,5 @@ comment2.target=void\ checkEdge()
 comment3.params=
 comment3.target=void\ checkCollision()
 numComments=4
+=======
+>>>>>>> f974898 (made it periodically move and repeat)
