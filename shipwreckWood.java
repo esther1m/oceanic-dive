@@ -18,6 +18,8 @@ public class shipwreckWood extends Actor
         move(1);
         checkCollision();
         move(1);
+        checkCollision();
+        move(1);
         setRotation(90);
         checkEdge();
         
