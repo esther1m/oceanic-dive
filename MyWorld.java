@@ -19,4 +19,9 @@ public class MyWorld extends World
         super(1000, 600, 1); 
     }
 }
+<<<<<<< HEAD
 
+=======
+//this is a
+//
+>>>>>>> 56b2c86 (linking vs code to greenfoot)
