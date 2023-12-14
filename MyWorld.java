@@ -43,9 +43,3 @@ public class MyWorld extends World
 
     }
 }
-<<<<<<< HEAD
-
-=======
-//this is a
-//
->>>>>>> 56b2c86 (linking vs code to greenfoot)
