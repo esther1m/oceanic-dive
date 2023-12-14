@@ -19,8 +19,4 @@ public class MyWorld extends World
         super(1000, 600, 1); 
     }
 }
-//this is a
-//hj,hjdtr
-//whatevers
-// practice 
-//branch
+
