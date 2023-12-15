@@ -19,20 +19,9 @@ public class shipwreckWood extends Actor
         setRotation(90);
         checkEdge();
         
-    }
-
-    private void checkEdge(){
-        if (isAtEdge()){
-            int randX = Greenfoot.getRandomNumber(getWorld().getWidth());
-            setLocation(randX, 4);
-        }
-    }
-
-    private void checkCollision(){
-        if (isTouching(getClass()) == true){
-            int randX2 = Greenfoot.getRandomNumber(getWorld().getWidth());
-            setLocation(randX2, 4);
-        }
+       // int startTime = Greenfoot.getRandomNumber(61);
+      //  Greenfoot.delay (startTime);
+        // Add your action code here.
     }
 
     private void checkEdge(){
