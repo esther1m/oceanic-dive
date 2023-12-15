@@ -1,3 +1,4 @@
 *.ctxt
 project.greenfoot
 *.class
+.DS_Store
