@@ -19,9 +19,6 @@ public class shipwreckWood extends Actor
         setRotation(90);
         checkEdge();
         
-       // int startTime = Greenfoot.getRandomNumber(61);
-      //  Greenfoot.delay (startTime);
-        // Add your action code here.
     }
 
     private void checkEdge(){
