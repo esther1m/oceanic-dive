@@ -12,6 +12,7 @@ public class Seaweed extends Actor
      * Act - do whatever the seaweed wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+// making the multiplier so that when the seaweed rotates it will then times by -1  and become positive so it rotates the other way
     int direction = -1;
     boolean checker = false;
     //MyWorld world = new MyWorld();
