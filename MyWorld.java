@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private static final int NUMBER_OF_SHIPWRECK = 7;
+    Diver diver = new Diver();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,10 +24,18 @@ public class MyWorld extends World
     }
         
     public void populate(){
-        addObject(new Diver(), 500 ,556);
+
+        addObject(diver, 500 ,556);
+
         for (int i = 0; i < NUMBER_OF_SHIPWRECK; i++){
             int x = Greenfoot.getRandomNumber(getWidth());
             addObject(new shipwreckWood(), x, 4);
+        }
+
+        for (int count = 0; count < NUMBER_OF_SEAWEED; count++){
+            int randomX = Greenfoot.getRandomNumber(getWidth());
+            int randomY = (Greenfoot.getRandomNumber(99) + 500);
+            addObject(new seaweed(), randomX, randomY);
         }
 
     }
