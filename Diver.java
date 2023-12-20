@@ -22,22 +22,22 @@ public class Diver extends Actor
      */
     public void act()
     {
-        if(Greenfoot.isKeyDown("Right"))
+        if(Greenfoot.isKeyDown("D"))
         {
             setRotation(0);
             move(1);
         }
-        if(Greenfoot.isKeyDown("Down"))
+        if(Greenfoot.isKeyDown("S"))
         {
             setRotation(90);
             move(1);
         }
-        if(Greenfoot.isKeyDown("Left"))
+        if(Greenfoot.isKeyDown("A"))
         {
             setRotation(180);
             move(1);
         }
-        if(Greenfoot.isKeyDown("Up"))
+        if(Greenfoot.isKeyDown("W"))
         {
             setRotation(270);
             move(1);
