@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Creature extends Actor
 {
-    int health = 1;
+    int health = 3;
     DiverShooter player;
     Counter counter;
     public Creature (DiverShooter mainPlayer, Counter counter)
