@@ -23,7 +23,7 @@ public class MyWorld extends World
     }
         
     public void populate(){
-
+        addObject(new Diver(), 500 ,556);
         for (int i = 0; i < NUMBER_OF_SHIPWRECK; i++){
             int x = Greenfoot.getRandomNumber(getWidth());
             addObject(new shipwreckWood(), x, 4);
