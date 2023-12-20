@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    //initialising the amount of shipwrecks to be repeated and the amount of seaweed to be in the game
     private static final int NUMBER_OF_SHIPWRECK = 7;
     private static final int NUMBER_OF_SEAWEED = 10;
     Diver diver = new Diver();
