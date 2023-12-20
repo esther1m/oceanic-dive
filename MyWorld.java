@@ -8,7 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    int count = 0;
+    // The Spawn speed is faster when spawnSpeed value is lowered
+    int spawnSpeed = 50;
+    int randomSpawn;
+    public DiverShooter mainPlayer = new DiverShooter();
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,6 +22,31 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
+        
+        addObject(mainPlayer, getWidth()/2, getHeight()/2);
+        addObject(counter, 130, 100);
+    }
+    public void act()
+    {
+        count++;
+        spawnCreatures();
+    }
+    public void spawnCreatures()
+    {
+        if (count % spawnSpeed == 0)
+        {
+        randomSpawn = Greenfoot.getRandomNumber(8);
+        switch(randomSpawn){
+            case 0: addObject(new Creature(mainPlayer,counter), 0, 0);break;
+            case 1: addObject(new Creature(mainPlayer,counter), getWidth()/2,0); break;
+            case 2: addObject(new Creature(mainPlayer,counter), getWidth(), 0); break;
+            case 3: addObject(new Creature(mainPlayer,counter), 0, getHeight()/2);break;
+            case 4: addObject(new Creature(mainPlayer,counter), getWidth(),getHeight()/2); break;
+            case 5: addObject(new Creature(mainPlayer,counter), 0, getHeight()); break;
+            case 6: addObject(new Creature(mainPlayer,counter), getWidth()/2, getHeight()); break;
+            case 7: addObject(new Creature(mainPlayer,counter), getWidth(), getHeight()); break;
+        }
+        }
     }
 }
 
