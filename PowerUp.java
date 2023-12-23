@@ -19,7 +19,7 @@ public class PowerUp extends Actor
     {
         setImage(new GreenfootImage(POWER_UP_LIMIT + 2, 12));
         getImage().drawRect(0,0,POWER_UP_LIMIT + 1,11);
-        getImage().setColor(Color.BLUE);
+        getImage().setColor(Color.MAGENTA);
         getImage().fillRect(1,1, powerUpCount, 10);
     }
 
@@ -27,7 +27,7 @@ public class PowerUp extends Actor
     {
         setImage(new GreenfootImage(POWER_UP_LIMIT + 2, 12));
         getImage().drawRect(0,0, POWER_UP_LIMIT + 1,11);
-        getImage().setColor(Color.BLUE);
+        getImage().setColor(Color.MAGENTA);
         getImage().fillRect(1,1, powerUpCount, 10);
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;

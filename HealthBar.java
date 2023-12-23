@@ -17,7 +17,7 @@ public class HealthBar extends Actor
     {
         setImage(new GreenfootImage(52, 12));
         getImage().drawRect(0,0,51,11);
-        getImage().setColor(Color.RED);
+        getImage().setColor(Color.GREEN);
         getImage().fillRect(1,1,health,10);
         
     }
@@ -25,7 +25,7 @@ public class HealthBar extends Actor
     {
         setImage(new GreenfootImage(52, 12));
         getImage().drawRect(0,0,51,11);
-        getImage().setColor(Color.RED);
+        getImage().setColor(Color.GREEN);
         getImage().fillRect(1,1,health,10);
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;

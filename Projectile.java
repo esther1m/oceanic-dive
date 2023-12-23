@@ -16,7 +16,7 @@ public class Projectile extends Actor
     public Projectile(int someParameter) //fix this/ research what I need to do
     {
         setImage(new GreenfootImage(10,2));
-        getImage().setColor(Color.ORANGE);
+        getImage().setColor(Color.RED);
         getImage().fillRect(0,0,10,2);
     }
     public void act()
