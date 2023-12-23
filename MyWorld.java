@@ -14,6 +14,9 @@ public class MyWorld extends World
     int randomSpawn;
     public DiverShooter mainPlayer = new DiverShooter();
     Counter counter = new Counter();
+    HealthBar healthBar = new HealthBar();
+    GunButton gunButton = new GunButton(counter);
+    PowerUp powerUp = new PowerUp();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,13 +25,25 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
-        
+        mainPlayer = new DiverShooter(gunButton, powerUp);
         addObject(mainPlayer, getWidth()/2, getHeight()/2);
         addObject(counter, 130, 100);
+        addObject(healthBar, mainPlayer.getX() - 5, mainPlayer.getY() - 50);
+        addObject(gunButton, 900, 100);
+        addObject(powerUp, mainPlayer.getX() + 10, mainPlayer.getY()-80);
     }
+    
+    public DiverShooter getDiverShooter()
+    {
+        return mainPlayer;
+    }
+
     public void act()
     {
         count++;
+        while(Greenfoot.isKeyDown("P")){
+            Greenfoot.delay(1);
+        }
         spawnCreatures();
     }
     public void spawnCreatures()

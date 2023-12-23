@@ -13,7 +13,7 @@ public class Projectile extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Projectile()
+    public Projectile(int someParameter) //fix this/ research what I need to do
     {
         setImage(new GreenfootImage(10,2));
         getImage().setColor(Color.ORANGE);

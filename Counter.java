@@ -10,9 +10,10 @@ public class Counter extends Actor
 {
     int score;
     int energy;
+    int time;
     public Counter()
     {
-        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy, 40, Color.WHITE, new Color (0,0,0,0)));
+        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0)));
     }
     /**
      * Act - do whatever the Counter wants to do. This method is called whenever
@@ -20,6 +21,7 @@ public class Counter extends Actor
      */
     public void act()
     {
-        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy, 40, Color.WHITE, new Color (0,0,0,0)));// Add your action code here.
+        time++;
+        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0)));
     }
 }

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Creature extends Actor
 {
-    int health = 3;
+    int health = 2;
     DiverShooter player;
     Counter counter;
     public Creature (DiverShooter mainPlayer, Counter counter)
@@ -16,8 +16,8 @@ public class Creature extends Actor
         this.counter = counter;
         player = mainPlayer;
         GreenfootImage myImage = getImage();
-        int myNewHeight = (int)myImage.getHeight()/10;
-        int myNewWidth = (int)myImage.getWidth()/10;
+        int myNewHeight = (int)myImage.getHeight()/6;
+        int myNewWidth = (int)myImage.getWidth()/6;
         myImage.scale(myNewHeight,myNewWidth);
     }  
     /**
