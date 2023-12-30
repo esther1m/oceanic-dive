@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DiverShooter extends Actor
 {
-    int speed = 3;
-    int time = 0;
+    int speed = 3; // setting the divers speed ??research 
+    int time = 0; 
     GunButton gunButton;
     PowerUp powerUp;
     int powerUpTimer;
@@ -20,13 +20,8 @@ public class DiverShooter extends Actor
     
     public DiverShooter()
     {
-        GreenfootImage myImage = getImage();
-        int myNewHeight = (int)myImage.getHeight()/10;
-        int myNewWidth = (int)myImage.getWidth()/10;
-        myImage.scale(myNewHeight,myNewWidth);
-        
-        getImage().setColor(Color.BLACK);
-        getImage().fillRect(30,25,70,10);
+        getImage().setColor(Color.BLACK); //creating a black gun using the get image method
+        getImage().fillRect(30,25,70,10); // drawing the rectangle for the gun with appropiate coordinates
     }
     public DiverShooter(GunButton gunButton, PowerUp powerUp)
     {
@@ -43,17 +38,20 @@ public class DiverShooter extends Actor
     public void act()
     {
         time++;
-        turnAround();
-        moveAround();
+        turnAround(); //calling the turnAroun method
+        moveAround(); ////calling the moveAround method
         fireProjectile();
         powerUpUsed();
         hitByCreature();
     }
     public void turnAround()
     {
-        if(Greenfoot.getMouseInfo() != null)
-            turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+        if(Greenfoot.getMouseInfo() != null) // if the mouse is off the screen the diver will not follow the mouse
+        {
+            turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); ////allows the diver to turn towards the mouse 
+        }
     }
+    //allows diver to move around the screen using set location and variations of speed
     public void moveAround()
     {
         if(Greenfoot.isKeyDown("W"))
@@ -68,32 +66,33 @@ public class DiverShooter extends Actor
     
     public void fireProjectile()
     {
-        if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 1){
-            Projectile projectile = new Projectile(0);
-            getWorld().addObject(projectile, getX(), getY());
-            projectile.setRotation(getRotation());
-            projectile.move(25);
+        if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 1)
+        {
+            Projectile projectile = new Projectile(); // ensures a new projectile can be fired each time the mouse is pressed
+            getWorld().addObject(projectile, getX(), getY()); 
+            projectile.setRotation(getRotation()); // enables the refrenced projectile to have the same rotation as the diver's rotation
+            projectile.move(25); // allows the projectiles to move
         }
         if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 2){
-            Projectile projectile = new Projectile(0);
+            Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
             projectile.setRotation(getRotation() - 5);
             projectile.move(20);
-            Projectile projectile2 = new Projectile(0);
+            Projectile projectile2 = new Projectile();
             getWorld().addObject(projectile2, getX(), getY());
             projectile2.setRotation(getRotation() + 5);
             projectile2.move(20);
         }
         if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 3){
-            Projectile projectile = new Projectile(0);
+            Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
             projectile.setRotation(getRotation() - 5);
             projectile.move(20);
-            Projectile projectile2 = new Projectile(0);
+            Projectile projectile2 = new Projectile();
             getWorld().addObject(projectile2, getX(), getY());
             projectile2.setRotation(getRotation() + 5);
             projectile2.move(20);
-            Projectile projectile3 = new Projectile(0);
+            Projectile projectile3 = new Projectile();
             getWorld().addObject(projectile3, getX(), getY());
             projectile3.setRotation(getRotation());
             projectile3.move(20);
@@ -103,27 +102,27 @@ public class DiverShooter extends Actor
     {
         if(powerUp.powerUpCount > 99 && powerUpTimer < 30 && Greenfoot.isKeyDown("SPACE"))
         {
-            Projectile projectile = new Projectile(0);
+            Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
             projectile.setRotation(getRotation() - 60);
             projectile.move(20);
-            Projectile projectile2 = new Projectile(0);
+            Projectile projectile2 = new Projectile();
             getWorld().addObject(projectile2, getX(), getY());
             projectile2.setRotation(getRotation() + 60);
             projectile2.move(20);
-            Projectile projectile3 = new Projectile(0);
+            Projectile projectile3 = new Projectile();
             getWorld().addObject(projectile3, getX(), getY());
             projectile3.setRotation(getRotation());
             projectile3.move(20);
-            Projectile projectile4 = new Projectile(0);
+            Projectile projectile4 = new Projectile();
             getWorld().addObject(projectile4, getX(), getY());
             projectile4.setRotation(getRotation() - 180);
             projectile4.move(20);
-            Projectile projectile5 = new Projectile(0);
+            Projectile projectile5 = new Projectile();
             getWorld().addObject(projectile5, getX(), getY());
             projectile5.setRotation(getRotation() + 120);
             projectile5.move(20);
-            Projectile projectile6 = new Projectile(0);
+            Projectile projectile6 = new Projectile();
             getWorld().addObject(projectile6, getX(), getY());
             projectile6.setRotation(getRotation() - 120);
             projectile6.move(20);

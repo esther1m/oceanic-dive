@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int count = 0;
-    // The Spawn speed is faster when spawnSpeed value is lowered
+    // The spawn speed is faster when spawn speed value is lowered
     int spawnSpeed = 50;
     int randomSpawn;
-    public DiverShooter mainPlayer = new DiverShooter();
+    public DiverShooter mainPlayer = new DiverShooter(); //making mainPlayer an instance of the new diver so a paramter can be passed
     Counter counter = new Counter();
     HealthBar healthBar = new HealthBar();
     GunButton gunButton = new GunButton(counter);
@@ -40,19 +40,20 @@ public class MyWorld extends World
 
     public void act()
     {
-        count++;
+        count++; // making sure count is not always 0 so creatures can spawn continuously
         while(Greenfoot.isKeyDown("P")){
             Greenfoot.delay(1);
         }
         spawnCreatures();
-    }
+    } 
     public void spawnCreatures()
     {
         if (count % spawnSpeed == 0)
         {
-        randomSpawn = Greenfoot.getRandomNumber(8);
-        switch(randomSpawn){
-            case 0: addObject(new Creature(mainPlayer,counter), 0, 0);break;
+            randomSpawn = Greenfoot.getRandomNumber(8); // setting creatures to spawn to another random spawn location using the random number generated 
+            switch(randomSpawn) //using a switch statement to ensure there are 8 spawn loactions 
+            {
+            case 0: addObject(new Creature(mainPlayer,counter), 0, 0);break; 
             case 1: addObject(new Creature(mainPlayer,counter), getWidth()/2,0); break;
             case 2: addObject(new Creature(mainPlayer,counter), getWidth(), 0); break;
             case 3: addObject(new Creature(mainPlayer,counter), 0, getHeight()/2);break;
@@ -60,7 +61,7 @@ public class MyWorld extends World
             case 5: addObject(new Creature(mainPlayer,counter), 0, getHeight()); break;
             case 6: addObject(new Creature(mainPlayer,counter), getWidth()/2, getHeight()); break;
             case 7: addObject(new Creature(mainPlayer,counter), getWidth(), getHeight()); break;
-        }
+            }
         }
     }
 }
