@@ -10,9 +10,9 @@ public class GunButton extends Actor
     }
     public void act()
     {
-        if(Greenfoot.mousePressed(this) && counter.energy > 159) // go back and change - only for testing purposes
+        if(Greenfoot.mousePressed(this) && counter.energy > 199) // go back and change - only for testing purposes
         {
-            counter.energy -= 160; 
+            counter.energy -= 200; 
             gunUpgrade++;
         }
         if(gunUpgrade >= 3)
