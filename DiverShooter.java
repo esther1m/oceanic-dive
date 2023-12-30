@@ -20,8 +20,7 @@ public class DiverShooter extends Actor
     
     public DiverShooter()
     {
-        getImage().setColor(Color.BLACK); //creating a black gun using the get image method
-        getImage().fillRect(30,25,70,10); // drawing the rectangle for the gun with appropiate coordinates
+        
     }
     public DiverShooter(GunButton gunButton, PowerUp powerUp)
     {
@@ -31,9 +30,6 @@ public class DiverShooter extends Actor
         int myNewHeight = (int)myImage.getHeight()/12;
         int myNewWidth = (int)myImage.getWidth()/12;
         myImage.scale(myNewHeight,myNewWidth);
-        
-        getImage().setColor(Color.BLACK);
-        getImage().fillRect(30,25,70,10);  
     }
     public void act()
     {

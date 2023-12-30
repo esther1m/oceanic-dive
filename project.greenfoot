@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Creature.image=Red\ eyed\ Creature\ New\ Image\ BackgroundRemoved.png
-class.DiverShooter.image=Diver\ Background\ Removed.png
+class.DiverShooter.image=DiverShooter\ Background\ Removed.png
 class.GunButton.image=Gun\ Upgrade\ Background\ Removed.png
 class.MyWorld.image=MyWorld\ Level\ 2\ Background.jpg
 class.Projectile.image=Burger\ Bullet\ Background\ Removed.png
