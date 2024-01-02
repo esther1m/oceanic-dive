@@ -1,19 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+//physical counter which keeps track of score, energy, time
 public class Counter extends Actor
 {
-    int score;
+    int score; 
     int energy;
     int time;
     public Counter()
     {
-        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0)));
+        //using built in methods on Greenfoot to create and show the image coded below
+        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0))); 
     }
 
     public void act()
     {
         time++;
-        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0)));
+        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0))); // added so that the counter will update as the game continues 
         youWin();
     }
     public void youWin()

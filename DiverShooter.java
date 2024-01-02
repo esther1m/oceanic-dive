@@ -13,23 +13,15 @@ public class DiverShooter extends Actor
     GunButton gunButton;
     PowerUp powerUp;
     int powerUpTimer;
-    /**
-     * Act - do whatever the DiverShooter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     
     public DiverShooter()
     {
-        
+        //?????
     }
     public DiverShooter(GunButton gunButton, PowerUp powerUp)
     {
         this.powerUp = powerUp;
         this.gunButton = gunButton;
-        GreenfootImage myImage = getImage();
-        int myNewHeight = (int)myImage.getHeight()/12;
-        int myNewWidth = (int)myImage.getWidth()/12;
-        myImage.scale(myNewHeight,myNewWidth);
     }
     public void act()
     {
@@ -51,13 +43,21 @@ public class DiverShooter extends Actor
     public void moveAround()
     {
         if(Greenfoot.isKeyDown("W"))
+        {
             setLocation(getX(),getY() - speed);
+        }
         if(Greenfoot.isKeyDown("A"))
+        {
             setLocation(getX()- speed, getY());
+        }
         if(Greenfoot.isKeyDown("S"))
+        {
             setLocation(getX(),getY() + speed);
+        }
         if(Greenfoot.isKeyDown("D"))
+        {
             setLocation(getX()+ speed, getY());
+        }
     }
     
     public void fireProjectile()
