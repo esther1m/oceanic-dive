@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class MyWorld extends World
+public class Level2 extends World
 {
     int count = 0;
     // The spawn speed is faster when spawn speed value is lowered
@@ -13,7 +13,7 @@ public class MyWorld extends World
     GunButton gunButton = new GunButton(counter);
     PowerUp powerUp = new PowerUp(); // creating an instance of power up so it can be accessed within Level 2
     
-    public MyWorld()
+    public Level2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
