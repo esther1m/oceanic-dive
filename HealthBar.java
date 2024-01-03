@@ -1,5 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
+ */
+
 public class HealthBar extends Actor
 {
     int health = 50;
@@ -24,12 +29,13 @@ public class HealthBar extends Actor
         getImage().fillRect(1,1,health,10);
         World world = getWorld();
         LevelTwo myWorld = (LevelTwo)world;
-        setLocation(myWorld.getDiverShooter().getX() - 5, myWorld.getDiverShooter().getY() - 50); //constantly sets position of the health bar above the diver 
+        //constantly sets position of the health bar above the diver
+        setLocation(myWorld.getDiverShooter().getX() - 5, myWorld.getDiverShooter().getY() - 50);  
         loseHealth();
     }
     public void loseHealth()
     {
-        //allows us to access the World class and MyWorld subclass
+        //allows us to access the World class and LevelTwo subclass
         World world = getWorld(); 
         LevelTwo myWorld = (LevelTwo)world;
         //if the diver is hit by the creature then health will be lost

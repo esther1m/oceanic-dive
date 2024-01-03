@@ -1,17 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
+ */
+
 public class LevelTwo extends World
 {
     int count = 0;
     // The spawn speed is faster when spawn speed value is lowered
-    int spawnSpeed = 60;
+    int spawnSpeed = 55;
     int randomSpawn;
     
-    public DiverShooter mainPlayer = new DiverShooter(); //making mainPlayer an instance of the new diver so a paramter can be passed
-    Counter counter = new Counter(); //creating an instance of Counter as it needs to be accessed outside of MyWorld so it will be initilaized outisde of the world
+    //making mainPlayer an instance of the new diver so a paramter can be passed
+    public DiverShooter mainPlayer = new DiverShooter(); 
+    //creating an instance of Counter
+    Counter counter = new Counter();  
     HealthBar healthBar = new HealthBar();
     GunButton gunButton = new GunButton(counter);
-    PowerUp powerUp = new PowerUp(); // creating an instance of power up so it can be accessed within Level 2
+    // creating an instance of power up so it can be accessed within Level Two
+    PowerUp powerUp = new PowerUp(); 
     
     public LevelTwo()
     {    
@@ -19,13 +27,17 @@ public class LevelTwo extends World
         super(1000, 600, 1); 
         mainPlayer = new DiverShooter(gunButton, powerUp);
         addObject(mainPlayer, getWidth()/2, getHeight()/2);
-        addObject(counter, 120, 100); //sets position of counter stats
-        addObject(healthBar, mainPlayer.getX() - 5, mainPlayer.getY() - 50); // adds the health bar above the diver 
-        addObject(gunButton, 900, 100); //
-        addObject(powerUp, mainPlayer.getX() + 10, mainPlayer.getY() - 80); // adds the power up bar above the diver and health bar 
+        //sets position of the visual counter on the game
+        addObject(counter, 120, 100); 
+        // adds the health bar above the diver 
+        addObject(healthBar, mainPlayer.getX() - 5, mainPlayer.getY() - 50);
+        // adds the gun upgrade button on the game screen
+        addObject(gunButton, 900, 100); 
+        // adds the power up bar above the diver and health bar 
+        addObject(powerUp, mainPlayer.getX() + 10, mainPlayer.getY() - 80); 
     }
     
-    //using a return to be able to access the mainPlayer information from World in other classes like the HealthBar and Counter classes
+    //using return to be able to access the mainPlayer information from World in other classes like the HealthBar and Counter classes
     public DiverShooter getDiverShooter()
     {
         return mainPlayer;
@@ -33,8 +45,9 @@ public class LevelTwo extends World
 
     public void act()
     {
-        count++; // making sure count is not always 0 so creatures can spawn continuously
-        //the conditional if statement ensures that the spawn speed of creatures gets faster every 10 seconds by decreasing the spawn speed value by 1 e
+        // incrementing count so creatures can spawn continuously
+        count++; 
+        //the conditional if statement ensures that the spawn speed of creatures gets faster every 10 seconds by decreasing the spawn speed value by 1
         if (count % 600 == 0)
         {
             spawnSpeed--;
@@ -44,17 +57,19 @@ public class LevelTwo extends World
         {
             Greenfoot.delay(1);
         }
-        spawnCreatures();
-    } 
+        spawnCreatures(); 
+    }
     public void spawnCreatures()
     {
         if (count % spawnSpeed == 0)
         {
-            randomSpawn = Greenfoot.getRandomNumber(8); // setting creatures to spawn to another random spawn location using the random number generated 
-            switch(randomSpawn) //using a switch statement to ensure there are 8 spawn loactions 
+            // setting creatures to spawn to another random spawn location using the random number generated
+            randomSpawn = Greenfoot.getRandomNumber(8);  
+            /* using a switch statement to ensure there are 8 spawn loactions 
+             * passing the mainPlayer so that each creature can recieve the information of the diver
+             * passing the counter so it is visible to the creatures */
+            switch(randomSpawn) 
             {
-                //passing the mainPlayer so that each creature can recieve the information of the diver
-                //So the creatures can see the counter
                 case 0: addObject(new Creature(mainPlayer,counter), 0, 0);break; 
                 case 1: addObject(new Creature(mainPlayer,counter), getWidth()/2,0); break;
                 case 2: addObject(new Creature(mainPlayer,counter), getWidth(), 0); break;

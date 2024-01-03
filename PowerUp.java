@@ -1,5 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
+ */
+
 public class PowerUp extends Actor
 {
     final int POWER_UP_LIMIT = 100; // initalised as a constant because the power up limit will never change

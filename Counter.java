@@ -1,6 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-//physical counter which keeps track of score, energy, time
+/**
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
+ */
+
+//this class creates a physical counter which keeps track of score, energy, time
 public class Counter extends Actor
 {
     int score; 
@@ -24,7 +29,7 @@ public class Counter extends Actor
         if (time/60 == 180)
         {
             getWorld().showText("You win! \n Final score: " + score, getWorld().getWidth()/2 , getWorld().getHeight()/2);
-            Greenfoot.stop();   
+            Greenfoot.stop(); //stops the game from continuing 
         }
     }
 }

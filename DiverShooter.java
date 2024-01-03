@@ -1,11 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DiverShooter here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
  */
+
 public class DiverShooter extends Actor
 {
     int speed = 3; 
@@ -14,9 +13,8 @@ public class DiverShooter extends Actor
     PowerUp powerUp; //creating an instance of PowerUp
     int powerUpTimer; // creating a power up timer that starts at 0
     
-    public DiverShooter()
-    {
-        
+    public DiverShooter(){
+        //default constructor that has no parameters 
     }
     public DiverShooter(GunButton gunButton, PowerUp powerUp)
     {
@@ -34,11 +32,15 @@ public class DiverShooter extends Actor
         powerUpUsed();
         hitByCreature();
     }
+    /* creating a turn around method for the diver using a conditional if statement
+     * if the mouse information is not equal to nothing the diver will turn towards the mouse
+     * the diver will not follow the mouse if it is not on screen as the mouse information will be equal to null and the code below will not exceute 
+     */
     public void turnAround()
     {
-        if(Greenfoot.getMouseInfo() != null) // if the mouse is off the screen the diver will not follow the mouse
+        if(Greenfoot.getMouseInfo() != null) 
         {
-            turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); ////allows the diver to turn towards the mouse 
+            turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); //allows the diver to turn towards the mouse using coordinates 
         }
     }
     //allows diver to move around the screen using set location and variations of speed
@@ -72,7 +74,7 @@ public class DiverShooter extends Actor
             projectile.setRotation(getRotation()); // enables the referenced projectile to have the same rotation as the diver's rotation
             projectile.move(25); // allows the projectiles to move
         }
-        //if the mouse is pressed and the gun button upgrade is equal to 2 then dual projectiles will be fired from the gun - each projectile have different rotations
+        //if the mouse is pressed and the gun button upgrade is equal to 2 then dual projectiles will be fired from the gun 
         if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 2){
             Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
@@ -83,7 +85,7 @@ public class DiverShooter extends Actor
             projectile2.setRotation(getRotation() + 5); // the referenced projectile will have the a + 5 rotation of the divers rotation
             projectile2.move(20);
         }
-        //if the mouse is pressed and the gun button upgrade is equal to 3 then three projectiles will be fired from the gun per click - each projectile have different rotations 
+        //if the mouse is pressed and the gun button upgrade is equal to 3 then three projectiles will be fired from the gun per click
         if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 3){
             Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
@@ -97,6 +99,25 @@ public class DiverShooter extends Actor
             getWorld().addObject(projectile3, getX(), getY()); // enables the referenced projectile to have the same rotation as the diver's rotation
             projectile3.setRotation(getRotation());
             projectile3.move(20);
+        }
+        //if the mouse is pressed and the gun button upgrade is equal to 4 then four projectiles will be fired from the gun per click
+        if(Greenfoot.mousePressed(null) && gunButton.gunUpgrade == 4){
+            Projectile projectile = new Projectile();
+            getWorld().addObject(projectile, getX(), getY());
+            projectile.setRotation(getRotation() - 5); // the referenced projectile will have the a - 5 rotation of the divers rotation
+            projectile.move(20);
+            Projectile projectile2 = new Projectile();
+            getWorld().addObject(projectile2, getX(), getY());
+            projectile2.setRotation(getRotation() + 5); // the referenced projectile will have the a + 5 rotation of the divers rotation
+            projectile2.move(20);
+            Projectile projectile3 = new Projectile();
+            getWorld().addObject(projectile3, getX(), getY()); // enables the referenced projectile to have the same rotation as the diver's rotation
+            projectile3.setRotation(getRotation());
+            projectile3.move(20);
+            Projectile projectile4 = new Projectile();
+            getWorld().addObject(projectile4, getX(), getY()); // the referenced projectile will have + 15 of the diver's rotation
+            projectile4.setRotation(getRotation() + 15);
+            projectile4.move(20);
         }
     }
     /*This method creates the instant kill power up to be used 

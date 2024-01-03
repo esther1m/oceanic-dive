@@ -1,14 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * @author (Muhammad Fazil) 
+ * @version (v1.0)
+ */
+
 public class Creature extends Actor
 {
-    int health = 3; //setting the creatures health
+    int health = 3; //initalizing and setting the creatures health
+    
     DiverShooter player;
     Counter counter; 
+    
     public Creature (DiverShooter mainPlayer, Counter counter) //provides each creature with the information of the diver and the counter
     {  
         this.counter = counter; // allows the creature to see the counter 
-        player = mainPlayer; //call on player and set it equal to the mainPlayer
+        player = mainPlayer; //calls on player and set it equal to the mainPlayer
     }  
     
     public void act()
@@ -20,17 +27,21 @@ public class Creature extends Actor
     public void moveAround()
     {
         move(1);
-        turnTowards(player.getX(), player.getY()); //ensures the creatures chases the diver by turning towards the coordinates
+        //ensure the creatures chase the diver by turning towards it's coordinates
+        turnTowards(player.getX(), player.getY()); 
     }
+    
     public void hitByProjectile()
     {
-        // Creating a refrence to the projectile that is intersecting the creature???? reserach
+        // Creating a reference to the projectile that is intersecting the creature
         Actor projectile = getOneIntersectingObject(Projectile.class); 
-        if(projectile != null) //
+        // if the projectile intersects the creature the if statment will be executed 
+        if(projectile != null) 
         {
-            health--;
-            getWorld().removeObject(projectile); 
+            health--; // the creatures health decreases by 1 each time it comes into contact with
+            getWorld().removeObject(projectile); // projectile will be removed
         }
+        // if the creatures health is equal to 0 to code will run
         if (health == 0)
         {
             counter.score++; //the counter score increases by 1 each time a creature is killed
