@@ -26,7 +26,7 @@ public class PowerUp extends Actor
         getImage().setColor(Color.MAGENTA);
         getImage().fillRect(1,1, powerUpCount, 10);
         World world = getWorld();
-        MyWorld myWorld = (MyWorld)world;
+        LevelTwo myWorld = (LevelTwo)world;
         //constantly sets position of the power up bar above the diver
         setLocation(myWorld.getDiverShooter().getX() + 10, myWorld.getDiverShooter().getY()-80); 
         powerUpReady();

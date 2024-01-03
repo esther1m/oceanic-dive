@@ -23,7 +23,7 @@ public class HealthBar extends Actor
         } else { getImage().setColor(Color.RED);} //added to act method so the health bar can update as the game updates
         getImage().fillRect(1,1,health,10);
         World world = getWorld();
-        MyWorld myWorld = (MyWorld)world;
+        LevelTwo myWorld = (LevelTwo)world;
         setLocation(myWorld.getDiverShooter().getX() - 5, myWorld.getDiverShooter().getY() - 50); //constantly sets position of the health bar above the diver 
         loseHealth();
     }
@@ -31,7 +31,7 @@ public class HealthBar extends Actor
     {
         //allows us to access the World class and MyWorld subclass
         World world = getWorld(); 
-        MyWorld myWorld = (MyWorld)world;
+        LevelTwo myWorld = (LevelTwo)world;
         //if the diver is hit by the creature then health will be lost
         if (myWorld.getDiverShooter().hitByCreature())
         {
