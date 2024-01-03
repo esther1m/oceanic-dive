@@ -24,7 +24,7 @@ public class Creature extends Actor
     }
     public void hitByProjectile()
     {
-        // Creatinga refrence to the projectile that is intersecting the creature???? reserach
+        // Creating a refrence to the projectile that is intersecting the creature???? reserach
         Actor projectile = getOneIntersectingObject(Projectile.class); 
         if(projectile != null) //
         {

@@ -15,7 +15,8 @@ public class Counter extends Actor
     public void act()
     {
         time++;
-        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0))); // added so that the counter will update as the game continues 
+        // added so that the counter will update as the game continues
+        setImage(new GreenfootImage("Score: " + score + "\n Energy: " + energy + "\n Time: " + time/60, 40, Color.WHITE, new Color (0,0,0,0)));  
         youWin();
     }
     public void youWin()
