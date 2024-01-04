@@ -28,8 +28,12 @@ public class Counter extends Actor
     {
         if (time/60 == 180)
         {
-            getWorld().showText("You win! \n Final score: " + score, getWorld().getWidth()/2 , getWorld().getHeight()/2);
-            Greenfoot.stop(); //stops the game from continuing 
+            getWorld().showText("Final score: " + score + "\n \n Press Z to see what is next... ", getWorld().getWidth()/2 , getWorld().getHeight()/2);
+            Greenfoot.delay(100);
+        }
+        if (Greenfoot.isKeyDown("Z") && time/60 >= 180)
+        {
+            Greenfoot.setWorld(new YouWinScreen());
         }
     }
 }
