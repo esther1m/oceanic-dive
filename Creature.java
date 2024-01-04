@@ -21,7 +21,7 @@ public class Creature extends Actor
     public void act()
     {
         moveAround(); 
-        hitByProjectile();
+        hitByBullet();
     }
     
     public void moveAround()
@@ -31,15 +31,15 @@ public class Creature extends Actor
         turnTowards(player.getX(), player.getY()); 
     }
     
-    public void hitByProjectile()
+    public void hitByBullet()
     {
-        // Creating a reference to the projectile that is intersecting the creature
-        Actor projectile = getOneIntersectingObject(Projectile.class); 
-        // if the projectile intersects the creature the if statment will be executed 
-        if(projectile != null) 
+        // Creating a reference to the bullet that is intersecting the creature
+        Actor bullet = getOneIntersectingObject(Bullet.class); 
+        // if the bullet intersects the creature the if statment will be executed 
+        if(bullet != null) 
         {
             health--; // the creatures health decreases by 1 each time it comes into contact with
-            getWorld().removeObject(projectile); // projectile will be removed
+            getWorld().removeObject(bullet); // bullet will be removed
         }
         // if the creatures health is equal to 0 to code will run
         if (health == 0)
